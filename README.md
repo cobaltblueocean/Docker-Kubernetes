@@ -27,3 +27,14 @@ $ kubectl create -f alpine-service.yaml
 
 
 9. when complete this process, from other machie can access masterNode IP address and port to run the web app result.
+
+To enhance the maxmize availability, add workNodes to the node cluster, and setup load balancer to enable this command.
+
+$ sudo kubeadm init --control-panel-endpoint "LOAD_BALANCER_DNS:LOAD_BALANCER_PORT" --upload-certs
+
+For the security, write a security-cotext.yaml to enable user/group level access control.
+For logging and operation, we also can use Dashboard.
+
+also, we can see the log using this command.
+$ kubectl logs
+ 
